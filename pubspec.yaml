@@ -1,0 +1,49 @@
+name: sheryan_admin
+description: A new Flutter project.
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.2.6
+  firebase_core: ^2.11.0
+  firebase_messaging: ^14.5.0
+  flutter_zoom_drawer: ^3.0.4+1
+  package_info_plus: ^3.1.2
+  awesome_notifications: ^0.7.4+1
+  dio: ^5.1.2
+  bot_toast: ^4.0.3
+  cached_network_image: ^3.2.3
+  url_launcher: ^6.1.10
+  reactive_forms: ^14.1.0
+  get: ^4.6.5
+  shimmer: ^2.0.0
+  device_info_plus: ^8.2.2
+  intl: ^0.17.0
+  flutter_markdown: ^0.6.14
+  font_awesome_flutter: ^10.4.0
+  location: ^4.4.0
+  local_database:
+    path: packages/local_database
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/jsons/

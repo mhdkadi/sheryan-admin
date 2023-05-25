@@ -1,0 +1,43 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  errors:
+    always_put_required_named_parameters_first: include
+    always_specify_types: warning
+    avoid_print: warning
+    avoid_empty_else: include
+    flutter_style_todos: include
+    always_declare_return_types: warning
+    prefer_final_locals: include
+    unnecessary_late: warning
+    depend_on_referenced_packages: include
+    library_private_types_in_public_api: include
+    no_leading_underscores_for_library_prefixes: include
+    no_leading_underscores_for_local_identifiers: include
+    null_check_on_nullable_type_parameter: include
+    prefer_interpolation_to_compose_strings: include
+    unnecessary_constructor_name: include
+    unnecessary_null_aware_assignments: include
+    unnecessary_nullable_for_final_variable_declarations: include
+    sort_child_properties_last: include
+    use_build_context_synchronously: include
+linter:
+  rules:
+    always_put_required_named_parameters_first: true
+    always_specify_types: false
+    avoid_print: true
+    avoid_empty_else: true
+    flutter_style_todos: true
+    always_declare_return_types: true
+    prefer_final_locals: true
+    unnecessary_late: true
+    depend_on_referenced_packages: true
+    library_private_types_in_public_api: false
+    no_leading_underscores_for_library_prefixes: true
+    no_leading_underscores_for_local_identifiers: true
+    null_check_on_nullable_type_parameter: true
+    prefer_interpolation_to_compose_strings: true
+    unnecessary_constructor_name: true
+    unnecessary_null_aware_assignments: true
+    unnecessary_nullable_for_final_variable_declarations: true
+    sort_child_properties_last: true
+    use_build_context_synchronously: true
