@@ -8,6 +8,7 @@ Widget orderWidget({
   final form = FormGroup({
     "pathologicalCase": FormControl<String>(
       validators: [
+        Validators.required,
         Validators.maxLength(40),
       ],
     ),
@@ -18,12 +19,18 @@ Widget orderWidget({
       ],
       value: "حكومي",
     ),
+    "hospital": FormControl<String>(
+      validators: [
+        Validators.maxLength(40),
+      ],
+    ),
   });
+  final double screenHeight = MediaQuery.of(context).size.height;
   return DraggableScrollableSheet(
     controller: draggableScrollableController,
-    maxChildSize: 0.39,
-    minChildSize: 0.04,
-    initialChildSize: 0.39,
+    maxChildSize: (0.55 * screenHeight) / 843.4285714285714,
+    minChildSize: (0.04 * screenHeight) / 843.4285714285714,
+    initialChildSize: (0.55 * screenHeight) / 843.4285714285714,
     builder: (context, scrollController) {
       return WillPopScope(
         onWillPop: () async {
@@ -92,6 +99,11 @@ Widget orderWidget({
                                   widgetState: widgetState,
                                   fieldState: fieldState,
                                   formControlName: "hospitalType",
+                                  onChanged: (p0) {
+                                    controller.hospitalType =
+                                        p0.value ?? "حكومي";
+                                    controller.update(["getHospitals"]);
+                                  },
                                   hintText: "إختر نوع المشفى",
                                   items: ["حكومي", "خاص"]
                                       .map((e) => DropdownMenuItem(
@@ -100,6 +112,31 @@ Widget orderWidget({
                                           ))
                                       .toList(),
                                   header: "نوع المشفى",
+                                  onRetry: controller.getPathologicalCases,
+                                );
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                            StateBuilder<MainHomeController>(
+                              id: "getHospitals",
+                              disableState: true,
+                              initialWidgetState: WidgetState.loading,
+                              builder: (fieldState, controller) {
+                                return StateHeaderDropdownField(
+                                  widgetState: widgetState,
+                                  fieldState: fieldState,
+                                  formControlName: "hospital",
+                                  hintText: "إختر المشفى (إختياري)",
+                                  items: controller.hospitals
+                                      .where((element) =>
+                                          element.type ==
+                                          controller.hospitalType)
+                                      .map((e) => DropdownMenuItem(
+                                            value: e.id,
+                                            child: Text(e.name),
+                                          ))
+                                      .toList(),
+                                  header: "المشفى",
                                   onRetry: controller.getPathologicalCases,
                                 );
                               },
