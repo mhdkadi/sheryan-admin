@@ -21,6 +21,7 @@ class ParamedicsController extends GetxStateController {
     await requestMethod(
       ids: ["RegisterView"],
       loadedMessage: "تم إنشاء الحساب بنجاح",
+      errorMessage: "الحساب موجود مسبقاً",
       requestType: RequestType.getData,
       function: () async {
         final LatLng currentLocation =

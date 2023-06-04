@@ -78,7 +78,7 @@ class MainDrawerView extends GetView<MainDrawerController> {
                             ),
                             drawerItem(
                               icon: Icons.fire_truck_outlined,
-                              title: "سيارات الإسعاف",
+                              title: "المسعفين",
                               route: DrawerRoutes.paramedicsRoute,
                               context: context,
                             ),
