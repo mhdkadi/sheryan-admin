@@ -28,6 +28,7 @@ class MainHomeController extends GetxStateController
     getLastState();
     updateCameraPosition();
     getPathologicalCases();
+    getHospitals();
     super.onInit();
   }
 
@@ -94,7 +95,7 @@ class MainHomeController extends GetxStateController
   }) async {
     await requestMethod(
       ids: ["orderWidget"],
-      loadedMessage: "تم استلام طلبك بنجاح المسعف في طريقه إليك",
+      loadedMessage: "تم استلام طلبك بنجاح المسعف في طريقه للمريض",
       requestType: RequestType.getData,
       function: () async {
         await constantsRepository.order(
